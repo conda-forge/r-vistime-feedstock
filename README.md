@@ -1,11 +1,11 @@
-About r-vistime
-===============
+About r-vistime-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-vistime-feedstock/blob/main/LICENSE.txt)
 
 Home: https://shosaco.github.io/vistime/
 
 Package license: GPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-vistime-feedstock/blob/main/LICENSE.txt)
 
 Summary: A library for creating time based charts, like Gantt or timelines. Possible outputs include 'ggplot2' diagrams, 'plotly.js' graphs, 'Highcharts.js' widgets and data.frames. Results can be used in the 'RStudio' viewer pane, in 'RMarkdown' documents or in Shiny apps. In the interactive outputs created by vistime() and hc_vistime(), you can interact with the plot using mouse hover or zoom.
 
