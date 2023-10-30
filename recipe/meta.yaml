@@ -1,4 +1,4 @@
-{% set version = '1.2.3' %}
+{% set version = "1.2.4" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,11 +11,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/vistime_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/vistime/vistime_{{ version }}.tar.gz
-  sha256: 2204af4f2b53e321e2654bae75a6163d04cad11b3284a5ac634ccb5bc3e9f8a1
+  sha256: d13b6f5a6fd2b376d4956cc3a0bf892e2912a5dd2c0caa88631f50efd115d592
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -51,11 +51,8 @@ test:
 about:
   home: https://shosaco.github.io/vistime/
   license: GPL-3.0-only
-  summary: A library for creating time based charts, like Gantt or timelines. Possible outputs
-    include 'ggplot2' diagrams, 'plotly.js' graphs, 'Highcharts.js' widgets and data.frames.
-    Results can be used in the 'RStudio' viewer pane, in 'RMarkdown' documents or in
-    Shiny apps. In the interactive outputs created by vistime() and hc_vistime(), you
-    can interact with the plot using mouse hover or zoom.
+  summary: A library for creating time based charts, like Gantt or timelines. Possible outputs include 'ggplot2' diagrams, 'plotly.js' graphs, 'Highcharts.js' widgets and data.frames. Results can be used in the 'RStudio' viewer pane, in 'RMarkdown' documents or in Shiny apps. In the interactive outputs created by vistime()
+    and hc_vistime(), you can interact with the plot using mouse hover or zoom.
   license_family: GPL3
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
