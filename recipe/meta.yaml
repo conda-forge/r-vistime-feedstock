@@ -1,5 +1,4 @@
 {% set version = "1.2.4" %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -14,38 +13,37 @@ source:
   sha256: d13b6f5a6fd2b376d4956cc3a0bf892e2912a5dd2c0caa88631f50efd115d592
 
 build:
-  merge_build_host: true  # [win]
+  merge_build_host: True  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
-  noarch: generic
 
 requirements:
   build:
-    - {{ posix }}zip  # [win]
-
+    - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-rcolorbrewer >=0.2.2
-    - r-assertive.types >=0.0_3
-    - r-ggplot2 >=2.0.0
+    - r-assertthat >=0.1
+    - r-ggplot2 >=3.4.0
     - r-ggrepel >=0.7.0
     - r-plotly >=4.0.0
     - r-rlang
-
   run:
     - r-base
     - r-rcolorbrewer >=0.2.2
-    - r-assertive.types >=0.0_3
-    - r-ggplot2 >=2.0.0
+    - r-assertthat >=0.1
+    - r-ggplot2 >=3.4.0
     - r-ggrepel >=0.7.0
     - r-plotly >=4.0.0
     - r-rlang
 
 test:
   commands:
-    - $R -e "library('vistime')"  # [not win]
+    - $R -e "library('vistime')"           # [not win]
     - "\"%R%\" -e \"library('vistime')\""  # [win]
 
 about:
@@ -64,7 +62,6 @@ extra:
     - thewchan
 
 # The original CRAN metadata for this package was:
-
 # Package: vistime
 # Title: Pretty Timelines in R
 # Version: 1.2.3
@@ -88,7 +85,6 @@ extra:
 # Maintainer: Sandro Raabe <sa.ra.online@posteo.de>
 # Repository: CRAN
 # Date/Publication: 2022-10-16 12:40:05 UTC
-
 # See
 # https://docs.conda.io/projects/conda-build for
 # more information about meta.yaml
